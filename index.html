@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Angular CSV Download</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<html ng-app="myApp">
+<body ng-controller="MyCtrl">
+
+  <h1>download</h1>
+    
+  <table class="table">       
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>age</th>
+      </tr>  
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in users">
+        <th>{{user.id}}</th>
+        <th>{{user.name}}</th>
+        <th>{{user.age}}</th>
+      </tr>  
+    </tbody>
+  </table>
+  
+    <button 
+            class="btn btn-primary"
+            type="button" ng-csv="downloadCSV()" csv-header="['id', 'name', 'age']" filename="download.csv">Export</button>
+
+</body>
+</html>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js'></script>
+<script src='https://asafdav.github.io/ng-csv/build/ng-csv.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
